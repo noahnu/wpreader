@@ -1,0 +1,39 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+a.open-wpreader { cursor: pointer; }
+a.open-wpreader-top { cursor: pointer; margin-left: 14px; }
+
+div#wpreader-backdrop { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: #cecece; opacity: 0.8; filter: opacity(80); padding: 0; margin: 0; cursor: pointer; }
+
+div#wpreader-container { display: none; position: absolute; top: 0; left: 0; right: 0; margin-left: auto; margin-right: auto; min-width: 70%; max-width: 900px; z-index: 2147483646 !important; padding: 0; }
+
+div#wpreader-scrollContainer { width: 100%; height: 100%; padding: 0; margin: 0; overflow: hidden; }
+
+div#wpreader-view { background: #ffffff; border: 0; -moz-box-shadow: 2px 3px 2px 1px #ccc; -webkit-box-shadow: 2px 3px 2px 1px #ccc; box-shadow: 2px 3px 2px 1px #ccc; width: 100%; min-height: 90%; padding: 0 15px 0 0; margin: 0 auto 0 auto; z-index: 2147483647 !important; overflow: auto; outline: 0; }
+
+div#wpreader-title { border-bottom: 1px solid #cecece; width: 95%; margin: 10px auto 4px auto;}
+div#wpreader-supTitle { width: 96%; background: #eeeeee; padding: 4px 1% 4px 1%; margin: 4px auto 0 auto; border-radius: 3px !important; opacity: 0.9; filter: opacity(90); }
+div#wpreader-supTitle p.wp-promptTitle { margin: 0; padding: 0; display: block; font-size: 14px; }
+div#wpreader-title p.wp-title { margin: 14px 0 11px 0; display: inline-block; }
+div#wpreader-title p.wp-title span.wp-user { font-size: 20px; font-weight: bold; }
+div#wpreader-title p.wp-title span.wp-user a { color: #333333; }
+div#wpreader-title p.wp-title span.wp-time { font-size: 14px; margin-left: 28px; }
+div#wpreader-title p.wp-title span.wp-score { font-size: 14px; margin-left: 28px; }
+div#wpreader-title a.wp-prev-link { font-size: 14px; float: right; cursor: pointer; color: black; text-transform: uppercase; }
+div#wpreader-title a.wp-next-link { font-size: 14px; float: right; cursor: pointer; color: black; text-transform: uppercase; margin: 0 0 0 14px; }
+
+div#wpreader-text { font-size: 15px; margin: 15px auto 1px auto; width: 95%; font-family: 'Opens Sans', sans-serif; }
+div#wpreader-text p { margin: 0 4px 14px 4px; text-indent: 14px; line-height: 1.5; }
+
+div#wpreader-text p.wp-continued { font-size: 0.8em; font-weight: bold; border-top: 1px solid #cecece; border-bottom: 1px solid #cecece; }
+div#wpreader-text p.wp-footer { font-size: 0.8em; text-align: center; margin: 6px auto 4px auto; border-top: 1px solid #cecece; width: 95%;}
+div#wpreader-text p.wp-footer a { text-decoration: underline; color: black; }
+
+div#wpreader-container  .wp-noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
