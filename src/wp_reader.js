@@ -107,7 +107,6 @@ var WPReader = {
 			if(mdContainer.length > 0){
 				var content = WPReader.cleanText(mdContainer.html());
 				
-				//Check for more parts to story.
 				content += WPReader.getParts(thing, author.text());
 				content += "<p class='wp-footer'><br />Find version info/updates at <a href='http://noahnu.com/wpreader' target='_blank'>WPReader Website</a>. You can send me a message via my <a href='http://noahnu.com/contact' target='_blank'>website</a> or inbox me at <a target='_blank' href='http://www.reddit.com/message/compose/?to=noahnu'>/u/noahnu</a>.<br /><br /></p>";
 				

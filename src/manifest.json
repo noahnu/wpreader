@@ -3,7 +3,7 @@
 
   "name": "WP Reader",
   "description": "Read /r/WritingPrompts with ease.",
-  "version": "0.4",
+  "version": "0.5",
   "description" : "Read /r/WritingPrompts submissions on Reddit with ease in a custom viewer.",
   "author" : "Noah NU",
   "homepage_url" : "http://noahnu.com/wpreader",
@@ -17,10 +17,7 @@
 	"tabs"
   ],
   "page_action" : {
-	"default_icon": {
-	  "19": "images/icon19.png",
-	  "38": "images/icon38.png"
-	},
+	"default_icon": "images/icon38.png",
 	"default_title": "WP Reader"
   },
   "content_scripts": [
