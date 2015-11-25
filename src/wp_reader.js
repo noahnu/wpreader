@@ -31,13 +31,14 @@ var WPReader = {
 	scanEntries: function(){
 		$('div.commentarea > div.sitetable').children('div.comment').children('div.entry').each(function(){
 			var linkA = $("<li><a class='open-wpreader'>open in WP Reader</a></li>");
-			var linkB = $("<a class='open-wpreader-top'>open in WP Reader</a>");
 			var thingID = $(this).parent().attr('data-fullname');
 			WPReader.wpEntryIDs.push(thingID);
 			linkA.find('a.open-wpreader').click(function(){WPReader.open(thingID)});
-			linkB.click(function(){WPReader.open(thingID)});
+			$(this).find('.usertext').dblclick(function(){
+				document.getSelection().removeAllRanges();
+				WPReader.open(thingID)
+			});
 			$(this).find('ul.flat-list.buttons').append(linkA);
-			$(this).find('p.tagline').append(linkB);
 		});
 		
 		if(WPReader.wpEntryIDs.length > 0){
@@ -76,6 +77,7 @@ var WPReader = {
 		
 		$(window).resize(function(){
 			WPReader.wpView.height($(window).height());
+			WPReader.wpView.scroll();
 		});
 		$(window).resize();
 
@@ -85,6 +87,15 @@ var WPReader = {
 				return false;
 			}
 		});
+		
+		WPReader.wpView.scroll(function(){
+		   WPReader.wpViewText.find('p').each(function () {
+			  if (($(this).offset().top - $('body').scrollTop()) < $(window).height()) {
+				  $(this).stop().fadeTo(200, 1);
+			  }
+		   });
+		});
+		
 	},
 	close: function(){
 		if(WPReader.wpBackdrop.is(':visible')){
@@ -108,7 +119,7 @@ var WPReader = {
 				var content = WPReader.cleanText(mdContainer.html());
 				
 				content += WPReader.getParts(thing, author.text());
-				content += "<p class='wp-footer'><br />Find version info/updates at <a href='http://noahnu.com/wpreader' target='_blank'>WPReader Website</a>. You can send me a message via my <a href='http://noahnu.com/contact' target='_blank'>website</a> or inbox me at <a target='_blank' href='http://www.reddit.com/message/compose/?to=noahnu'>/u/noahnu</a>.<br /><br /></p>";
+				content += "<p class='wp-footer'><br />Open source on <a href='https://github.com/noahnu/wpreader' target='_blank'>Github</a>. You can send me a message via my <a href='http://noahnu.com/contact' target='_blank'>website</a> or inbox me at <a target='_blank' href='http://www.reddit.com/message/compose/?to=noahnu'>/u/noahnu</a>.<br /><br /></p>";
 				
 				if(WPReader.wpContainer.is(':visible')){
 					WPReader.wpViewText.hide();
@@ -133,6 +144,12 @@ var WPReader = {
 					WPReader.wpView.focus();
 				}
 			}
+			
+			WPReader.wpViewText.find('p').each(function(){
+				if (($(this).offset().top - $('body').scrollTop() + 50) > $(window).height()) {
+				  $(this).stop().fadeTo(1, 0.25);
+				}
+			});
 		}
 	},
 	next: function(){

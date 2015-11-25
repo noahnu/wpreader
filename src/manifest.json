@@ -3,7 +3,7 @@
 
   "name": "WP Reader",
   "description": "Read /r/WritingPrompts with ease.",
-  "version": "0.5",
+  "version": "0.6",
   "description" : "Read /r/WritingPrompts submissions on Reddit with ease in a custom viewer.",
   "author" : "Noah NU",
   "homepage_url" : "http://noahnu.com/wpreader",
@@ -22,7 +22,7 @@
   },
   "content_scripts": [
     {
-	  "matches" : ["*://www.reddit.com/*"],
+	  "matches" : ["*://www.reddit.com/r/WritingPrompts/*", "*://www.reddit.com/r/writingprompts/*"],
 	  "css" : ["wp_styles.css"],
 	  "js" : ["jquery-2.1.1.min.js", "wp_reader.js"]
 	}

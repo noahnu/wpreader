@@ -22,6 +22,11 @@ div#wpreader-title p.wp-title span.wp-score { font-size: 14px; margin-left: 28px
 div#wpreader-title a.wp-prev-link { font-size: 14px; float: right; cursor: pointer; color: black; text-transform: uppercase; }
 div#wpreader-title a.wp-next-link { font-size: 14px; float: right; cursor: pointer; color: black; text-transform: uppercase; margin: 0 0 0 14px; }
 
+@media screen and (max-width: 450px){
+	div#wpreader-title a.wp-prev-link { display: none; }
+	div#wpreader-title a.wp-next-link { display: none; }
+}
+
 div#wpreader-text { font-size: 15px; margin: 15px auto 1px auto; width: 95%; font-family: 'Opens Sans', sans-serif; }
 div#wpreader-text p { margin: 0 4px 14px 4px; text-indent: 14px; line-height: 1.5; }
 
@@ -36,4 +41,8 @@ div#wpreader-container  .wp-noselect {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+div.entry .usertext {
+	cursor: pointer;
 }
